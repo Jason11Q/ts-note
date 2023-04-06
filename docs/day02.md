@@ -6,7 +6,7 @@ outline: deep
 
 ## 复杂类型
 
-### Array 类型
+### 数组 [array]
 
 > 推荐第一种写法，第二种为泛型写法。
 
@@ -25,7 +25,7 @@ let arr2:(number|string)[] = [1, 'a'];
 arr2 = ['b', 2];
 ```
 
-### 元组
+### 元组 [tuple]
 
 > 可以理解为多类型且固定类型顺序的数组
 
@@ -33,7 +33,7 @@ arr2 = ['b', 2];
 let tuple:[string,boolean]= ['test', true];
 ```
 
-### 接口
+### 接口 [interface]
 
 > interface,一般用于类型约束或者方法组合继承等
 
@@ -55,7 +55,7 @@ let phone :Device = {
 - 属性*后*添加?表示可空属性
 - 属性*前*添加readonly表示只读属性
 
-### 函数
+### 函数 [function]
 
 > function 可以规定函数的输入类型和返回类型进行约束
 > 在*形参后面*接冒号声明 形参的类型，在*（）后面*冒号声明 返回值类型
@@ -107,7 +107,15 @@ const sunLambda = (num1:number,num2:number,num3?:number):number=>{
 let mySum:(num1:number,num2:number,num3?:number)=>number=sunLambda;
 ```
 
+> 用接口定义函数类型
 
+```ts
+interface ISum {
+    (num1: number,num2: number):number;
+}
 
+let mySum2 :ISum = sum;
+
+```
 
 
